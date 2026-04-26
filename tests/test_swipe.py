@@ -99,7 +99,7 @@ def open_calendar(app='Calendar'):
     return text.split('\n')[0]
 
 
-@pytest.mark.parametrize('driver', [''], indirect=True)
+@pytest.mark.parametrize('driver', ['', 'logged'], indirect=True)
 @allure.description('Поиск и открытие календаря')
 def test_swipe(driver, app='Calendar'):
     """
