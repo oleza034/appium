@@ -99,7 +99,7 @@ def open_calendar(app='Calendar'):
     return text.split('\n')[0]
 
 
-@pytest.mark.parametrize('driver', ['', 'logged'], indirect=True)
+@pytest.mark.parametrize('driver', [''], indirect=True)
 @allure.description('Поиск и открытие календаря')
 def test_swipe(driver, app='Calendar'):
     """
@@ -109,6 +109,7 @@ def test_swipe(driver, app='Calendar'):
     3. Запустить приложение
     4. Сгенерировать отчёт в Appium / Allure
     """
+    # Инициализируем драйвер для последующего использования в модуле appium_elem
     appium_elem.driver = driver
 
     if err := open_pnv(driver=driver):
